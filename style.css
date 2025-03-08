@@ -1,0 +1,494 @@
+* {
+    margin: 0;padding: 0;box-sizing: border-box;scroll-behavior: smooth;
+}
+@font-face {
+    font-family: My;
+    src: url(fonts/Vogan-8M04B.ttf);
+}
+body {
+    background: #aab7ea;
+    background: var(--baseColor);
+    color: #001f3f;
+    color: var(--textColor);
+}
+.first {
+    position: relative;top: 0;left: 0;width: 100%;height: 100vh;display: flex;flex-direction: column;overflow: hidden;
+}
+.first header {
+    position: relative;top: 0;left: 0;width: 100%;height: 20%;background: #001f3f;
+    background: var(--headerColor);
+    color: #aab7ea;
+    color: var(--headerTextColor);
+    display: flex;overflow: hidden;justify-content: end;
+}
+.first header .sideicon {
+    padding: 10px;border-radius: 71px;
+    background: #e0e0e0;
+    box-shadow:  6px 6px 24px #bebebe,
+                 -2px -2px 24px #ffffff;
+    position: relative;top: 30px;right: 20px;width: 40%;height: 50%;display: flex;overflow: hidden;
+}
+.first header .sideicon .box {cursor: pointer;
+    position: relative;top: 0;left: 10px;width: 40px;height: 40px;display: flex;overflow: hidden;margin-right: 40px;justify-content: center;align-items: center;
+}
+.first header .sideicon .box img {
+    position: relative;top: 0;left: 0;overflow: hidden;
+}.first header .sideicon .box img:hover {
+    filter: invert(0.4);
+    -webkit-filter: invert(0.4);
+}
+.first header .sideicon .box img.active {
+    display: flex;visibility: visible;width: 30px;height: 30px;
+}
+.first header .sideicon .box img.inactive{
+    display: none;visibility: hidden;
+}
+.first header .circle {
+    position: relative;top: 0;right: 0;width: 60%;height: 100%;background: #dddcdc;display: flex;overflow: hidden;align-items: center;
+}.first header .circle .oi {
+    position: relative;
+    top: 0;
+    left: 0;cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background: #afadad;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 15px;border: 2px solid #001f3f;
+}
+.first header .circle a {font-family: sans-serif;top: 0;left: 30px;cursor: pointer;
+    position: relative;text-align: end;font-size: 1.2em;text-decoration: none;color: #565657;
+}
+.guo {
+    position:fixed;bottom: 20px;left: 45%;width: 180px;height:130px;display: flex;overflow: hidden;flex-direction: column;justify-content: center;align-items: center;
+}
+.guo .circle {
+    position: relative;
+    top: -10px;
+    left: 0;
+    width: 70px;
+    height: 90px;display: flex;justify-content: center;background: #e0e0e0;
+    box-shadow:  6px 6px 24px #bebebe,
+                 -2px -2px 24px #ffffff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;cursor: pointer;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.guo .circle img {
+    position: relative;top: 20px;left: 0;width: 30px;height: 30px;
+}
+.guo .line {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 90%;
+    height:50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;background: #e0e0e0;
+    box-shadow:  2px 2px 24px #bebebe,
+                 -2px -2px 24px #ffffff;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.guo .line img {margin: 10px;cursor: pointer;
+    position: relative;top: 0;left: 0;width: 30px;height: 30px;
+}
+.slide {
+    position: fixed;
+    top: 40%;
+    right: 10px;font-weight: 900;font-family:My;
+    width: 40px;
+    height: 200px;font-style: italic;
+    border-radius:25px;writing-mode: vertical-lr; /* Rotates text vertically from left to right */
+    transform: rotate(180deg);font-size: 2.6em;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;letter-spacing: 5px;
+    -ms-border-radius:25px;
+    -o-border-radius:25px;
+}
+.first .shoy {
+    position: relative;top: 0;left: 0;width: 100%;height: 100%;display: flex;overflow: hidden;
+}
+.first .shoy .re {
+    position: relative;top: 0;left: 0;width: 33%;height: 100%;display: flex;overflow: hidden;align-items: center;
+}
+.swiper {
+    width: 280px;
+    height: 420px;
+  }
+.swiper-slide {position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;flex-direction: column;
+    font-weight: bold;overflow: hidden;
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+  }
+  .swiper-slide video {
+    position: relative;top: 0;left: 0;width: 100%;height: 100%;display: flex;object-fit: cover;
+  }
+  .swiper-slide .line {
+    position: absolute;bottom: 0;left: 0;width: 100%;height: 10%;background: rgba(0,0,0,0.3);display: flex;justify-content: space-between;overflow: hidden;
+  }  .swiper-slide .line .ui {
+    position: relative;top: 0;left: 0;width: 50%;height: 100%;display: flex;justify-content: center;align-items: center;
+  }
+.swiper-slide .line .ui .box {cursor: pointer;margin-right: 10px;
+    position: relative;top: 0;left: 0;width: 30px;height: 30px;display: flex;overflow: hidden;justify-content: center;align-items: center;
+}
+.swiper-slide .line .ui .box img { filter:invert(1) ; position: relative; top: 0; left: 0; overflow: hidden; -webkit-filter:invert(1) ;
+}.swiper-slide .line .ui .box img:hover {
+    filter: invert(0.4);
+    -webkit-filter: invert(0.4);
+}
+.swiper-slide .line .ui .box img.inactive {
+    display: flex;visibility: visible;width: 20px;height: 20px;
+}
+.swiper-slide .line .ui .box img.active{
+    display: none;visibility: hidden;
+} .swiper-slide .line .uid {
+    position: relative;top: 0;left: 0;width: 40%;height: 100%;display: flex;justify-content: center;align-items: center;
+  }
+.swiper-slide .line .uid .box {cursor: pointer;margin-right: 10px;
+    position: relative;top: 0;left: 0;width: 20px;height: 20px;display: flex;overflow: hidden;justify-content: center;align-items: center;
+}
+.swiper-slide .line .uid .box img { filter:invert(1) ; position: relative; top: 0; left: 0; overflow: hidden; -webkit-filter:invert(1) ;
+}.swiper-slide .line .uid .box img:hover {
+    filter: invert(0.4);
+    -webkit-filter: invert(0.4);
+}
+.swiper-slide .line .uid .box img.inactive {
+    display: flex;visibility: visible;width: 20px;height: 20px;
+}
+.swiper-slide .line .uid .box img.active{
+    display: none;visibility: hidden;
+}
+.video-container { border-radius:25px; position: absolute; top: 3%; left: 6%; width: 90%; height: 90%; display: none; overflow: hidden; background: #000; -webkit-border-radius:25px; -moz-border-radius:25px; -ms-border-radius:25px; -o-border-radius:25px; transition: 0.5s; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s;
+}
+.video-container video {z-index: 2;
+    position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;
+}
+.video-container .close-btn { transition:0.5s; position: absolute; top: 20px; right:10px; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; background: #fff; border-radius: 50%; cursor: pointer; z-index: 3; -webkit-transition:0.5s ; -moz-transition:0.5s ; -ms-transition:0.5s ; -o-transition:0.5s ;
+}
+.mes {   
+    position: relative;top: 0;left: 0;width: 33%;height: 100%;display: flex;overflow: hidden;padding: 10px;
+}
+.mes .yup {
+    position: relative;
+    top: 10px;background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  10px 10px 10px #bebebe,
+                 -5px -5px 10px #ffffff;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.mes .yup .line {
+    position: relative;top: 0;left: 0;width: 100%;height:90px;display: flex;justify-content: space-between;overflow: hidden;
+}
+.mes .yup .line .one {padding: 5px;cursor: pointer;
+    position: relative;top: 20px;left: 20px;width: 40px;height:40px;display: flex;overflow: hidden;justify-content: center;align-items: center;
+}
+.mes .yup .line .one img {
+    position: relative;top: 0;left: 0;width: 30px;height:30px;object-fit: cover;
+}
+.mes .yup .line .two {
+    position: relative;top: 0;left: 0;width: 150px;height:100%;display: flex;overflow: hidden;flex-wrap: wrap;
+}
+.mes .yup .line .two .tie {padding-top: 20px;
+    position: relative;top: 0;left: 0;display: flex;flex-wrap: wrap;overflow: hidden;
+}
+.mes .yup .line .two .tie .box {cursor: pointer;
+    margin: 2px;position: relative;top: 0;left: 0;width: 40px;height: 40px;display: flex;overflow: hidden;
+}
+.mes .yup .line .two .tie .box img {
+    position: relative;top: 0;left: 0;width: 30px;height: 30px;object-fit: cover;
+}.mes .yup .line .two .tie .box img.inactive {
+    display: flex;visibility: visible;width: 20px;height: 20px;
+}
+.mes .yup .line .two .tie .box img.active{
+    display: none;visibility: hidden;
+}
+.mes .yup .line .two .tie .box:nth-child(1) img.inactive {
+    width: 20.6px;height: 20.6px;
+}
+.mes .yup .line .three {
+    position: relative;top: 0;left: 0;width: 170px;height:100%;display: flex;overflow: hidden;flex-wrap: wrap;
+}
+.mes .yup .line .three .cir {
+    position: relative;
+    top: 10px;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;background: #000;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.mes .yup .line .three .cir .cdl {
+    position: relative;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;
+}
+.mes .yup .line .three .text {font-size: 1.2em;
+    position: absolute;top: 0;right: 0;width: 55%;height: 100%;display: flex;overflow: hidden;align-items: center;flex-wrap: wrap;
+}
+.mes .yup .inpo {
+    position: absolute;bottom: 5%;left: 0;width: 100%;height:20%;display: flex;overflow: hidden;
+}
+.mes .yup .inpo form {
+    position: relative;left: 10px;width: 70%;
+}
+.mes .yup .inpo form input[type="text"] { border-radius:25px; position: relative; width: 90%; padding: 10px; margin: 10px; -webkit-border-radius:25px; -moz-border-radius:25px; -ms-border-radius:25px; -o-border-radius:25px;border: none;background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  6px 6px 6px #ffffff,
+                 -5px -5px 10px #bebebe;padding-left: 15px;
+}
+
+
+
+
+
+
+
+.bgKeyboard {
+    width: 540px;
+    height: 210px;
+    border-radius: 20px;align-items: center;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 30%;background: #e0e0e0;
+    box-shadow:  6px 6px 24px #bebebe,
+                 -2px -2px 24px #ffffff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;display: none;visibility: hidden;
+    -ms-user-select: none;
+    user-select: none;overflow: hidden;opacity: 0;
+}
+.bgKeyboard.Monster {
+    display: flex;visibility: visible;opacity: 1;
+}
+
+.startMsg {display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+.keyboard {
+    visibility: visible;padding: 10px;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    /*left: 30%;
+    */
+}
+
+.row {
+    width: 100%;
+    height: 30px;
+}
+
+.numberLine, .alphaUpperLine, .alphaMiddleLine, .alphaLowerLine, .BottomLine {
+    margin: 5px 0 5px 0;
+}
+
+.row div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    color: black;
+    width: 25px;
+    height: 25px;
+    border: black 1px solid;
+    border-radius: 20%;
+    background: rgb(235, 232, 232);
+    margin-left: 5px;
+    margin-right: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#Keybackspace {
+    width:50px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+#Keytab, #KeybackSlash {
+    width:35px;
+    border-radius: 10px;
+}
+
+#Keycapslock {position: relative;
+    width:70px;
+    border-radius: 10px;
+}
+
+#Keyenter {
+    width: 120px;
+    border-radius: 10px;
+}
+
+#KeylShift {
+    width: 80px;
+    border-radius: 10px;
+}
+
+.KeyrShift {
+    width: 80px;
+    border-radius: 10px;
+}
+
+#KeylCtrl {
+    width: 60px;
+    border-radius: 10px;
+}
+
+#Keyspace {
+    width: 98px;
+    border-radius: 10px;
+}
+
+#KeyrCtrl {
+    width: 60px;
+    border-radius: 10px;
+}
+
+/*Key colors*/
+
+.Keyblacktick, .Keyone, .Keytab, .Keyq, .Keya, .KeylShift, .Keyz, .KeylCtrl, .Keywin {
+    background-color: rgb(255, 160, 122);
+    border-color: rgb(184, 83, 44);
+}
+
+.Keytwo, .Keyw, .Keys, .Keyx {
+    background-color: rgb(240, 128, 128);
+    border-color: rgb(180, 81, 81);
+    ;
+}
+
+.Keythree, .Keye, .Keyd, .Keyc {
+    background-color: rgb(119, 136, 153);
+    border-color: rgb(44, 88, 133);
+}
+
+.Keyfour, .Keyfive, .Keyr, .Keyt, .Keyf, .Keyg, .Keyv, .Keyb {
+    background-color: rgb(135, 206, 250);
+    border-color: rgb(49, 144, 204);
+}
+
+.Keysix, .Keyseven, .Keyy, .Keyu, .Keyh, .Keyj, .Keyn, .Keym {
+    background-color: rgb(173, 216, 230);
+    border-color: rgb(44, 119, 145);
+}
+
+.Keyeight, .Keyi, .Keyk, .Keycomma {
+    background-color: rgb(144, 238, 144);
+    border-color: rgb(60, 187, 60);
+}
+
+.Keynine, .Keyo, .Keyl, .Keyfullstop {
+    background-color: rgb(255, 184, 194);
+    border-color: rgb(180, 70, 84);
+}
+
+.Keyzero, .Keyminus, .KeyequalsTo, .Keybackspace, .Keyp, .KeyopenedBracket, .KeyclosedBracket, .KeybackSlash, .Keysemicolon, .Keyquote, .Keyenter, .KeyfrontSlash, .KeyrShift, .KeyrCtrl {
+    background-color: rgb(255, 255, 155);
+    border-color: rgb(192, 192, 52);
+}
+
+.Keycapslock {width: 80px;
+    background-color: rgb(255, 222, 173);
+    border-color: rgb(194, 138, 54);
+}
+
+.KeyrAlt, .Keyspace, .KeylAlt {
+    background-color: rgb(32, 178, 170);
+    border-color: rgb(9, 109, 104);
+}
+
+.KeylFunction, .KeyrFunction {
+    background-color: rgb(244, 164, 96);
+    border-color: rgb(167, 91, 25);
+}
+
+.fol {   
+    position: relative;top: 0;left: 0;width: 33%;height: 100%;display: flex;overflow: hidden;padding: 10px;
+}
+.fol .boxModel1 {
+    position: relative;top: 12%;left: 5%;width: 80%;height: 70%;border-radius: 50px;
+background: #e0e0e0;
+box-shadow: inset 20px 20px 60px #ffffff,
+            inset -20px -20px 60px #bebebe;overflow: hidden;
+}
+
+.fol .box1h1 {position: relative;margin: 10px;padding: 10px;
+    color: #000;font-family: cursive;display: flex;overflow: hidden;
+}
+.fol .box1h1::before {
+    content: '';position: absolute;bottom: 0;left: 13%;width: 20%;height: 2px;background: #000;
+}
+.fol .gamechanger {
+    position: relative;top: 10px;left: 0;width: 100%;height: 100%;background:transparent;overflow-x: hidden;
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+/* Customizing scrollbar */
+.fol .gamechanger::-webkit-scrollbar {
+    width: 10px;
+}
+
+.fol .gamechanger::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.fol .gamechanger::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.fol .gamechanger::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+.searchenginechat {position: relative;
+    top:10px;
+    left: 10%;
+    /*Adjustpaddingtofittheiconandspace*/background-image: url('images/search.png');
+    /*Pathtoyoursearchicon*/background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    /*Adjustspacehere*/background-size: 20px;
+    /*Adjustsizeoftheicon*/width: 80%;
+    /*Adjustwidthasneeded*/height: 10%;
+    /*Adjustheightasneeded*/padding-left: 20px;
+    border: none;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}

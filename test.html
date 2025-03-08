@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard with Clear Key</title>
+  <!-- Link Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Link animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    /* CSS for keyboard layout */
+    .keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 50px);
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .key {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .key:hover {
+      background-color: #f0f0f0;
+    }
+    /* CSS for clear button */
+    #clear-button {
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+      border: none;
+      background-color: #dc3545;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #clear-button:hover {
+      background-color: #c82333;
+    }
+    /* CSS for cursor line */
+    #input-field::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: black;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="keyboard" class="keyboard">
+    <!-- Alphanumeric keys -->
+    <div class="key">1</div>
+    <div class="key">2</div>
+    <div class="key">3</div>
+    <div class="key">4</div>
+    <div class="key">5</div>
+    <div class="key">6</div>
+    <div class="key">7</div>
+    <div class="key">8</div>
+    <div class="key">9</div>
+    <div class="key">0</div>
+    <div class="key">Q</div>
+    <div class="key">W</div>
+    <div class="key">E</div>
+    <div class="key">R</div>
+    <div class="key">T</div>
+    <div class="key">Y</div>
+    <div class="key">U</div>
+    <div class="key">I</div>
+    <div class="key">O</div>
+    <div class="key">P</div>
+    <div class="key">A</div>
+    <div class="key">S</div>
+    <div class="key">D</div>
+    <div class="key">F</div>
+    <div class="key">G</div>
+    <div class="key">H</div>
+    <div class="key">J</div>
+    <div class="key">K</div>
+    <div class="key">L</div>
+    <div class="key">Z</div>
+    <div class="key">X</div>
+    <div class="key">C</div>
+    <div class="key">V</div>
+    <div class="key">B</div>
+    <div class="key">N</div>
+    <div class="key">M</div>
+    <!-- Special keys -->
+    <div class="key special" id="shift">Shift</div>
+    <div class="key special" id="capslock">Caps Lock</div>
+    <div class="key special" id="backspace">Backspace</div>
+    <!-- Navigation keys -->
+    <div class="key special" id="left-arrow">&larr;</div>
+    <div class="key special" id="right-arrow">&rarr;</div>
+  </div>
+
+  <!-- Clear button -->
+  <button id="clear-button">Clear</button>
+
+  <!-- Input field -->
+  <input type="text" id="input-field">
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const keys = document.querySelectorAll('.key');
+      const inputField = document.getElementById('input-field');
+      let capsLockActive = false;
+
+      keys.forEach(key => {
+        key.addEventListener('click', function() {
+          const keyType = key.classList.contains('special') ? 'special' : 'regular';
+          const keyValue = key.textContent;
+          handleKeyPress(keyType, keyValue);
+        });
+      });
+
+      document.getElementById('clear-button').addEventListener('click', function() {
+        inputField.value = '';
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+          moveCursor(-1);
+          event.preventDefault(); // Prevent the default behavior of the arrow key
+        } else if (event.key === 'ArrowRight') {
+          moveCursor(1);
+          event.preventDefault(); // Prevent the default behavior of the arrow key
+        }
+      });
+
+      function handleKeyPress(type, value) {
+        switch (type) {
+          case 'regular':
+            inputField.value += capsLockActive ? value.toUpperCase() : value.toLowerCase();
+            break;
+          case 'special':
+            handleSpecialKey(value);
+            break;
+        }
+      }
+
+      function handleSpecialKey(key) {
+        switch (key) {
+          case 'Shift':
+            // Do something when Shift is pressed
+            break;
+          case 'Caps Lock':
+            capsLockActive = !capsLockActive;
+            break;
+          case 'Backspace':
+            inputField.value = inputField.value.slice(0, -1);
+            break;
+        }
+      }
+
+      function moveCursor(direction) {
+        const currentPosition = inputField.selectionStart;
+        const newPosition = currentPosition + direction;
+        if (newPosition >= 0 && newPosition <= inputField.value.length) {
+          inputField.setSelectionRange(newPosition, newPosition);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
