@@ -1,242 +1,773 @@
 <!DOCTYPE html>
-<html lang="en" style="--positionX: 22px; --positionXOpposite: -22px; --positionY: 22px; --positionYOpposite: -22px; --angle: 145deg; --blur: 44px; --textColor: #001f3f; --textColorOpposite: #e0e0e0; --baseColor: #e0e0e0; --darkColor: #bebebe; --lightColor: #ffffff; --firstGradientColor: #f0f0f0; --secondGradientColor: #cacaca; --size: 221px; --radius: 71px;">
+<html lang="en"
+    style="--positionX: 22px; --positionXOpposite: -22px; --positionY: 22px; --positionYOpposite: -22px; --angle: 145deg; --blur: 44px; --textColor: #001f3f; --textColorOpposite: #e0e0e0; --baseColor: #e0e0e0; --darkColor: #bebebe; --lightColor: #ffffff; --firstGradientColor: #f0f0f0; --secondGradientColor: #cacaca; --size: 221px; --radius: 71px;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="SocialMedia — A revolutionary next-gen social media platform with premium glassmorphic visuals, immersive ambient sound, and unique social interactions.">
+    <meta name="theme-color" content="#e0e0e0">
+    <title>SocialMedia — Next-Gen Social Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script>
+        (function () {
+            var redirecting = false;
+            function checkDevice() {
+                if (redirecting) return;
+                var width = document.documentElement.clientWidth || window.innerWidth;
+                var isMobile = width <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile && window.location.pathname.indexOf("mobile.html") === -1) {
+                    redirecting = true;
+                    window.location.href = "mobile.html";
+                }
+            }
+            checkDevice();
+            window.addEventListener('resize', checkDevice);
+        })();
+    </script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <script src="swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <section class="first">
         <header class="banner">
             <div class="circle">
-                <div class="oi o1"></div>
-                <div class="oi o2"></div>
-                <div class="oi o3"></div>
-                <div class="oi o4"></div>
-                <div class="oi o5"></div>
-                <div class="text"><a href="#">More</a></div>
+                <div class="oi o1"><img src="images/user.png" alt="User 1"></div>
+                <div class="oi o2"><img src="images/user (1).png" alt="User 2"></div>
+                <div class="oi o3"><img src="images/user (2).png" alt="User 3"></div>
+                <div class="oi o4"><img src="images/user (3).png" alt="User 4"></div>
+                <div class="oi o5"><img src="images/happy.png" alt="User 5"></div>
+                <div class="text"><a href="javascript:void(0)" onclick="openStoriesExplorer()">More</a></div>
             </div>
+
+            <!-- Dynamic Vibe Ticker (Creative center pill) -->
+            <div class="navbar-vibe-pill" onclick="toggleMoreSidebar()" title="Click to shift vibes">
+                <span class="vibe-dot animate-pulse"></span>
+                <span class="vibe-text" id="navVibeText">Vibe: Original</span>
+            </div>
+
             <div class="sideicon">
-                <div class="box" title="Home" onclick="change()"><img src="images/home.png" alt="" class="active" id="homepng"><img src="images/home1.png" alt="" class="inactive" id="homepng1"></div>
-                <div class="box" title="Search" onclick="chang()"><img src="images/search (2).png" alt="" class="active" id="searchpng"><img src="images/search1.png" alt="" class="inactive" id="searchpng1"></div>
-                <div class="box" title="Explore" onclick="chan()"><img src="images/compass1.png" alt="" class="active" id="explorepng"><img src="images/compass3.png" alt="" class="inactive" id="explorepng1"></div>
-                <div class="box" title="Shorts" onclick="cha()"><img src="images/cam-recorder1.png" alt="" class="active" id="shortpng"><img src="images/videocam.png" alt="" class="inactive" id="shortpng1"></div>
-                <div class="box" title="Messages" onclick="ch()"><img src="images/speech-bubble.png" alt="" class="active" id="messagepng"><img src="images/speech-bubble2.png" alt="" class="inactive" id="messagepng1"></div>
-                <div class="box" title="Messages" onclick="c()"><img src="images/heart.png" alt="" class="active" id="heart"><img src="images/heart1.png" alt="" class="inactive" id="heart1"></div>
+                <div class="box" title="Home" onclick="change()"><img src="images/home.png" alt="" class="active"
+                        id="homepng"><img src="images/home1.png" alt="" class="inactive" id="homepng1"></div>
+                <div class="box" title="Search" onclick="chang()"><img src="images/search (2).png" alt="" class="active"
+                        id="searchpng"><img src="images/search1.png" alt="" class="inactive" id="searchpng1"></div>
+                <div class="box" title="Explore" onclick="chan()"><img src="images/compass1.png" alt="" class="active"
+                        id="explorepng"><img src="images/compass3.png" alt="" class="inactive" id="explorepng1"></div>
+                <div class="box" title="Shorts" onclick="cha()"><img src="images/cam-recorder1.png" alt=""
+                        class="active" id="shortpng"><img src="images/videocam.png" alt="" class="inactive"
+                        id="shortpng1"></div>
+                <div class="box" title="Messages" onclick="ch()"><img src="images/speech-bubble.png" alt=""
+                        class="active" id="messagepng"><img src="images/speech-bubble2.png" alt="" class="inactive"
+                        id="messagepng1"></div>
+                <div class="box" title="Messages" onclick="c()"><img src="images/heart.png" alt="" class="active"
+                        id="heart"><img src="images/heart1.png" alt="" class="inactive" id="heart1"></div>
             </div>
         </header>
         <div class="shoy">
+            <canvas id="vibeRippleCanvas"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999;"></canvas>
             <div class="re">
                 <div id="video-container" class="video-container">
-    <div class="video-content">
-      <video id="video-player" controls>
-        <source id="video-source" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <button id="close-btn" class="close-btn">Close</button>
-    </div>
-  </div>
+                    <div class="video-content">
+                        <video id="video-player" controls>
+                            <source id="video-source" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button id="close-btn" class="close-btn">Close</button>
+                    </div>
+                </div>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
                         <div class="swiper-slide" data-video="videos/158316 (Original).mp4">
-                            <video src="videos/158316 (Original).mp4" class="swiper-video" autoplay loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="poll()"><img src="images/heart (1).png" alt="" class="inactive" id="heartfor"><img src="images/heart1.png" alt="" class="active" id="heartfor1"></div>
-                                    <div class="box" title="Comment" onclick="pol()"><img src="images/speech-bubble.png" alt="" class="inactive" id="speachingfor"><img src="images/speech-bubble2.png" alt="" class="active" id="speachingfor1"></div>
-                                    <div class="box" title="Send" onclick="po()"><img src="images/send.png" alt="" class="inactive" id="sendfor"><img src="images/send1.png" alt="" class="active" id="sendfor1"></div>
+                            <video src="videos/158316 (Original).mp4" class="swiper-video" autoplay muted loop
+                                playsinline></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user.png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@alex_creative</span>
+                                    <button class="reels-follow-btn">Follow</button>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="p()"><img src="images/bookmark.png" alt="" class="inactive" id="bookinfor"><img src="images/bookmark (1).png" alt="" class="active" id="bookinfor1"></div>
-                                    <div class="box" title="Volume" onclick="pa()"><img src="images/volume.png" alt="" class="inactive" id="volumefor"><img src="images/volume-mute.png" alt="" class="active" id="volumefor1"></div>
+                                <p class="reels-caption">Relaxing loops to code by. 💻☕ #vibe #coding</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Lofi Beats - Chill Coders</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="poll()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="heartfor"><img
+                                            src="images/heart1.png" alt="" class="active" id="heartfor1">
+                                    </div>
+                                    <span class="action-count">12.4K</span>
+                                </div>
+                                <div class="action-item" onclick="pol()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive"
+                                            id="speachingfor"><img src="images/speech-bubble2.png" alt="" class="active"
+                                            id="speachingfor1">
+                                    </div>
+                                    <span class="action-count">342</span>
+                                </div>
+                                <div class="action-item" onclick="po()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="sendfor"><img
+                                            src="images/send1.png" alt="" class="active" id="sendfor1">
+                                    </div>
+                                    <span class="action-count">905</span>
+                                </div>
+                                <div class="action-item" onclick="p()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="bookinfor"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="bookinfor1">
+                                    </div>
+                                    <span class="action-count">1.8K</span>
+                                </div>
+                                <div class="action-item" onclick="pa()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="volumefor"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="volumefor1">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user.png" alt="Disc">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="a()"><img src="images/heart (1).png" alt="" class="inactive" id="h1"><img src="images/heart1.png" alt="" class="active" id="h11"></div>
-                                    <div class="box" title="Comment" onclick="ab()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s1"><img src="images/speech-bubble2.png" alt="" class="active" id="s11"></div>
-                                    <div class="box" title="Send" onclick="abc()"><img src="images/send.png" alt="" class="inactive" id="se1"><img src="images/send1.png" alt="" class="active" id="se11"></div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide" data-video="videos/happy.mp4">
+                            <video src="videos/happy.mp4" autoplay muted loop playsinline class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (1).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@happy_mind</span>
+                                    <button class="reels-follow-btn">Follow</button>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="abcd()"><img src="images/bookmark.png" alt="" class="inactive" id="b1"><img src="images/bookmark (1).png" alt="" class="active" id="b11"></div>
-                                    <div class="box" title="Volume" onclick="abcda()"><img src="images/volume.png" alt="" class="inactive" id="v1"><img src="images/volume-mute.png" alt="" class="active" id="v11"></div>
+                                <p class="reels-caption">Finding joy in the small things in life! 🌻☀️ #mindfulness</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Sunbeams - Happy Vibes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="a()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h1"><img
+                                            src="images/heart1.png" alt="" class="active" id="h11">
+                                    </div>
+                                    <span class="action-count">8.7K</span>
+                                </div>
+                                <div class="action-item" onclick="ab()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s1"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s11">
+                                    </div>
+                                    <span class="action-count">112</span>
+                                </div>
+                                <div class="action-item" onclick="abc()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se1"><img
+                                            src="images/send1.png" alt="" class="active" id="se11">
+                                    </div>
+                                    <span class="action-count">421</span>
+                                </div>
+                                <div class="action-item" onclick="abcd()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b1"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b11">
+                                    </div>
+                                    <span class="action-count">789</span>
+                                </div>
+                                <div class="action-item" onclick="abcda()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v1"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v11">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (1).png" alt="Disc">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Slide 3 -->
                         <div class="swiper-slide" data-video="videos/181536 (Original).mp4">
-                            <video src="videos/181536 (Original).mp4" muted loop class="swiper-video"></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa1()"><img src="images/heart (1).png" alt="" class="inactive" id="h2"><img src="images/heart1.png" alt="" class="active" id="h12"></div>
-                                    <div class="box" title="Comment" onclick="aa2()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s2"><img src="images/speech-bubble2.png" alt="" class="active" id="s12"></div>
-                                    <div class="box" title="Send" onclick="aa3()"><img src="images/send.png" alt="" class="inactive" id="se2"><img src="images/send1.png" alt="" class="active" id="se12"></div>
+                            <video src="videos/181536 (Original).mp4" autoplay muted loop playsinline
+                                class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (2).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@motion_graphics</span>
+                                    <button class="reels-follow-btn">Follow</button>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa4()"><img src="images/bookmark.png" alt="" class="inactive" id="b2"><img src="images/bookmark (1).png" alt="" class="active" id="b12"></div>
-                                    <div class="box" title="Volume" onclick="aa5()"><img src="images/volume.png" alt="" class="inactive" id="v2"><img src="images/volume-mute.png" alt="" class="active" id="v12"></div>
+                                <p class="reels-caption">Dynamic color theory experiments. What do you think? 🎨
+                                    #graphics</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Deep Space - Chill House</span>
+                                    </div>
                                 </div>
-                            </div></div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa6()"><img src="images/heart (1).png" alt="" class="inactive" id="h3"><img src="images/heart1.png" alt="" class="active" id="h13"></div>
-                                    <div class="box" title="Comment" onclick="aa7()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s3"><img src="images/speech-bubble2.png" alt="" class="active" id="s13"></div>
-                                    <div class="box" title="Send" onclick="aa8()"><img src="images/send.png" alt="" class="inactive" id="se3"><img src="images/send1.png" alt="" class="active" id="se13"></div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa1()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h2"><img
+                                            src="images/heart1.png" alt="" class="active" id="h12">
+                                    </div>
+                                    <span class="action-count">15.9K</span>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa9()"><img src="images/bookmark.png" alt="" class="inactive" id="b3"><img src="images/bookmark (1).png" alt="" class="active" id="b13"></div>
-                                    <div class="box" title="Volume" onclick="aa10()"><img src="images/volume.png" alt="" class="inactive" id="v3"><img src="images/volume-mute.png" alt="" class="active" id="v13"></div>
+                                <div class="action-item" onclick="aa2()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s2"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s12">
+                                    </div>
+                                    <span class="action-count">804</span>
+                                </div>
+                                <div class="action-item" onclick="aa3()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se2"><img
+                                            src="images/send1.png" alt="" class="active" id="se12">
+                                    </div>
+                                    <span class="action-count">1.4K</span>
+                                </div>
+                                <div class="action-item" onclick="aa4()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b2"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b12">
+                                    </div>
+                                    <span class="action-count">2.5K</span>
+                                </div>
+                                <div class="action-item" onclick="aa5()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v2"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v12">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (2).png" alt="Disc">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa11()"><img src="images/heart (1).png" alt="" class="inactive" id="h4"><img src="images/heart1.png" alt="" class="active" id="h14"></div>
-                                    <div class="box" title="Comment" onclick="aa12()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s4"><img src="images/speech-bubble2.png" alt="" class="active" id="s14"></div>
-                                    <div class="box" title="Send" onclick="aa13()"><img src="images/send.png" alt="" class="inactive" id="se4"><img src="images/send1.png" alt="" class="active" id="se14"></div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide" data-video="videos/happy_2.mp4">
+                            <video src="videos/happy_2.mp4" autoplay muted loop playsinline
+                                class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (3).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@travel_pulse</span>
+                                    <button class="reels-follow-btn">Follow</button>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa14()"><img src="images/bookmark.png" alt="" class="inactive" id="b4"><img src="images/bookmark (1).png" alt="" class="active" id="b14"></div>
-                                    <div class="box" title="Volume" onclick="aa15()"><img src="images/volume.png" alt="" class="inactive" id="v4"><img src="images/volume-mute.png" alt="" class="active" id="v14"></div>
+                                <p class="reels-caption">Chasing sunsets around the globe. Where next? ✈️🌅 #travel</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Sunset Dreams - Wanderer</span>
+                                    </div>
                                 </div>
-                            </div></div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa16()"><img src="images/heart (1).png" alt="" class="inactive" id="h5"><img src="images/heart1.png" alt="" class="active" id="h15"></div>
-                                    <div class="box" title="Comment" onclick="aa17()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s5"><img src="images/speech-bubble2.png" alt="" class="active" id="s15"></div>
-                                    <div class="box" title="Send" onclick="aa18()"><img src="images/send.png" alt="" class="inactive" id="se5"><img src="images/send1.png" alt="" class="active" id="se15"></div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa6()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h3"><img
+                                            src="images/heart1.png" alt="" class="active" id="h13">
+                                    </div>
+                                    <span class="action-count">22.1K</span>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa19()"><img src="images/bookmark.png" alt="" class="inactive" id="b5"><img src="images/bookmark (1).png" alt="" class="active" id="b15"></div>
-                                    <div class="box" title="Volume" onclick="aa20()"><img src="images/volume.png" alt="" class="inactive" id="v5"><img src="images/volume-mute.png" alt="" class="active" id="v15"></div>
+                                <div class="action-item" onclick="aa7()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s3"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s13">
+                                    </div>
+                                    <span class="action-count">1.1K</span>
                                 </div>
-                            </div></div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa21()"><img src="images/heart (1).png" alt="" class="inactive" id="h6"><img src="images/heart1.png" alt="" class="active" id="h16"></div>
-                                    <div class="box" title="Comment" onclick="aa22()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s6"><img src="images/speech-bubble2.png" alt="" class="active" id="s16"></div>
-                                    <div class="box" title="Send" onclick="aa23()"><img src="images/send.png" alt="" class="inactive" id="se6"><img src="images/send1.png" alt="" class="active" id="se16"></div>
+                                <div class="action-item" onclick="aa8()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se3"><img
+                                            src="images/send1.png" alt="" class="active" id="se13">
+                                    </div>
+                                    <span class="action-count">3.8K</span>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa24()"><img src="images/bookmark.png" alt="" class="inactive" id="b6"><img src="images/bookmark (1).png" alt="" class="active" id="b16"></div>
-                                    <div class="box" title="Volume" onclick="aa25()"><img src="images/volume.png" alt="" class="inactive" id="v6"><img src="images/volume-mute.png" alt="" class="active" id="v16"></div>
+                                <div class="action-item" onclick="aa9()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b3"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b13">
+                                    </div>
+                                    <span class="action-count">4.2K</span>
                                 </div>
-                            </div></div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa26()"><img src="images/heart (1).png" alt="" class="inactive" id="h7"><img src="images/heart1.png" alt="" class="active" id="h17"></div>
-                                    <div class="box" title="Comment" onclick="aa27()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s7"><img src="images/speech-bubble2.png" alt="" class="active" id="s17"></div>
-                                    <div class="box" title="Send" onclick="aa28()"><img src="images/send.png" alt="" class="inactive" id="se7"><img src="images/send1.png" alt="" class="active" id="se17"></div>
+                                <div class="action-item" onclick="aa10()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v3"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v13">
+                                    </div>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa29()"><img src="images/bookmark.png" alt="" class="inactive" id="b7"><img src="images/bookmark (1).png" alt="" class="active" id="b17"></div>
-                                    <div class="box" title="Volume" onclick="aa30()"><img src="images/volume.png" alt="" class="inactive" id="v7"><img src="images/volume-mute.png" alt="" class="active" id="v17"></div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (3).png" alt="Disc">
+                                    </div>
                                 </div>
-                            </div></div>
-                        <div class="swiper-slide">
-                            <video src="" autoplay muted loop></video>
-                            <div class="line">
-                                <div class="ui">
-                                    <div class="box" title="Heart" onclick="aa31()"><img src="images/heart (1).png" alt="" class="inactive" id="h8"><img src="images/heart1.png" alt="" class="active" id="h18"></div>
-                                    <div class="box" title="Comment" onclick="aa32()"><img src="images/speech-bubble.png" alt="" class="inactive" id="s8"><img src="images/speech-bubble2.png" alt="" class="active" id="s18"></div>
-                                    <div class="box" title="Send" onclick="aa33()"><img src="images/send.png" alt="" class="inactive" id="se8"><img src="images/send1.png" alt="" class="active" id="se18"></div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide" data-video="videos/happy_3.mp4">
+                            <video src="videos/happy_3.mp4" autoplay muted loop playsinline
+                                class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/happiness.png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@gravitas_dev</span>
+                                    <button class="reels-follow-btn">Follow</button>
                                 </div>
-                                <div class="uid">
-                                    <div class="box" title="Bookmark" onclick="aa34()"><img src="images/bookmark.png" alt="" class="inactive" id="b8"><img src="images/bookmark (1).png" alt="" class="active" id="b18"></div>
-                                    <div class="box" title="Volume" onclick="aa35()"><img src="images/volume.png" alt="" class="inactive" id="v8"><img src="images/volume-mute.png" alt="" class="active" id="v18"></div>
+                                <p class="reels-caption">Building the future of social interaction. Join us! 🚀🔭 #dev
+                                </p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Starlight Synth - Cosmic Sound</span>
+                                    </div>
                                 </div>
-                            </div></div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa11()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h4"><img
+                                            src="images/heart1.png" alt="" class="active" id="h14">
+                                    </div>
+                                    <span class="action-count">9.8K</span>
+                                </div>
+                                <div class="action-item" onclick="aa12()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s4"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s14">
+                                    </div>
+                                    <span class="action-count">210</span>
+                                </div>
+                                <div class="action-item" onclick="aa13()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se4"><img
+                                            src="images/send1.png" alt="" class="active" id="se14">
+                                    </div>
+                                    <span class="action-count">309</span>
+                                </div>
+                                <div class="action-item" onclick="aa14()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b4"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b14">
+                                    </div>
+                                    <span class="action-count">1.1K</span>
+                                </div>
+                                <div class="action-item" onclick="aa15()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v4"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v14">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/happiness.png" alt="Disc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide" data-video="videos/fotor.webm">
+                            <video src="videos/fotor.webm" autoplay muted loop playsinline class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user.png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@pixel_art</span>
+                                    <button class="reels-follow-btn">Follow</button>
+                                </div>
+                                <p class="reels-caption">Exploring surreal generative pixel physics... 🕹️✨ #generative
+                                </p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">original audio - PixelArt</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa16()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h5"><img
+                                            src="images/heart1.png" alt="" class="active" id="h15">
+                                    </div>
+                                    <span class="action-count">18.2K</span>
+                                </div>
+                                <div class="action-item" onclick="aa17()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s5"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s15">
+                                    </div>
+                                    <span class="action-count">954</span>
+                                </div>
+                                <div class="action-item" onclick="aa18()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se5"><img
+                                            src="images/send1.png" alt="" class="active" id="se15">
+                                    </div>
+                                    <span class="action-count">2.3K</span>
+                                </div>
+                                <div class="action-item" onclick="aa19()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b5"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b15">
+                                    </div>
+                                    <span class="action-count">3.7K</span>
+                                </div>
+                                <div class="action-item" onclick="aa20()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v5"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v15">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user.png" alt="Disc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide" data-video="videos/158316 (Original).mp4">
+                            <video src="videos/158316 (Original).mp4" autoplay muted loop playsinline
+                                class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (1).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@nature_escape</span>
+                                    <button class="reels-follow-btn">Follow</button>
+                                </div>
+                                <p class="reels-caption">Deep forest green energy. Take a deep breath. 🌲🍃 #zen</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Forest Whispers - Meditation Ambient</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa21()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h6"><img
+                                            src="images/heart1.png" alt="" class="active" id="h16">
+                                    </div>
+                                    <span class="action-count">14.1K</span>
+                                </div>
+                                <div class="action-item" onclick="aa22()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s6"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s16">
+                                    </div>
+                                    <span class="action-count">430</span>
+                                </div>
+                                <div class="action-item" onclick="aa23()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se6"><img
+                                            src="images/send1.png" alt="" class="active" id="se16">
+                                    </div>
+                                    <span class="action-count">560</span>
+                                </div>
+                                <div class="action-item" onclick="aa24()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b6"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b16">
+                                    </div>
+                                    <span class="action-count">1.4K</span>
+                                </div>
+                                <div class="action-item" onclick="aa25()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v6"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v16">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (1).png" alt="Disc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide" data-video="videos/181536 (Original).mp4">
+                            <video src="videos/181536 (Original).mp4" autoplay muted loop playsinline
+                                class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (2).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@neon_vibe</span>
+                                    <button class="reels-follow-btn">Follow</button>
+                                </div>
+                                <p class="reels-caption">Midnight coding sessions just hit different. 🌙🌌 #cyberpunk
+                                </p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Synthwave Sunset - Neon Nights</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa26()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h7"><img
+                                            src="images/heart1.png" alt="" class="active" id="h17">
+                                    </div>
+                                    <span class="action-count">24.5K</span>
+                                </div>
+                                <div class="action-item" onclick="aa27()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s7"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s17">
+                                    </div>
+                                    <span class="action-count">1.3K</span>
+                                </div>
+                                <div class="action-item" onclick="aa28()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se7"><img
+                                            src="images/send1.png" alt="" class="active" id="se17">
+                                    </div>
+                                    <span class="action-count">4.8K</span>
+                                </div>
+                                <div class="action-item" onclick="aa29()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b7"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b17">
+                                    </div>
+                                    <span class="action-count">5.1K</span>
+                                </div>
+                                <div class="action-item" onclick="aa30()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v7"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v17">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (2).png" alt="Disc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 9 -->
+                        <div class="swiper-slide" data-video="videos/happy.mp4">
+                            <video src="videos/happy.mp4" autoplay muted loop playsinline class="swiper-video"></video>
+                            <div class="reels-user-overlay">
+                                <div class="reels-user-row">
+                                    <img src="images/user (3).png" alt="Avatar" class="reels-avatar">
+                                    <span class="reels-username">@vibe_master</span>
+                                    <button class="reels-follow-btn">Follow</button>
+                                </div>
+                                <p class="reels-caption">Flow state activated. Enjoy the vibes. 🌊⚡ #flow</p>
+                                <div class="reels-music-ticker">
+                                    <span class="music-icon">🎵</span>
+                                    <div class="music-text-wrapper">
+                                        <span class="music-text">Ambient Lofi Chill Beats - Original</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reels-vertical-actions">
+                                <div class="action-item" onclick="aa31()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/heart (1).png" alt="" class="inactive" id="h8"><img
+                                            src="images/heart1.png" alt="" class="active" id="h18">
+                                    </div>
+                                    <span class="action-count">19.3K</span>
+                                </div>
+                                <div class="action-item" onclick="aa32()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/speech-bubble.png" alt="" class="inactive" id="s8"><img
+                                            src="images/speech-bubble2.png" alt="" class="active" id="s18">
+                                    </div>
+                                    <span class="action-count">567</span>
+                                </div>
+                                <div class="action-item" onclick="aa33()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/send.png" alt="" class="inactive" id="se8"><img
+                                            src="images/send1.png" alt="" class="active" id="se18">
+                                    </div>
+                                    <span class="action-count">880</span>
+                                </div>
+                                <div class="action-item" onclick="aa34()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/bookmark.png" alt="" class="inactive" id="b8"><img
+                                            src="images/bookmark (1).png" alt="" class="active" id="b18">
+                                    </div>
+                                    <span class="action-count">3.4K</span>
+                                </div>
+                                <div class="action-item" onclick="aa35()">
+                                    <div class="action-icon-circle">
+                                        <img src="images/volume.png" alt="" class="inactive" id="v8"><img
+                                            src="images/volume-mute.png" alt="" class="active" id="v18">
+                                    </div>
+                                </div>
+                                <div class="action-item music-disc-item">
+                                    <div class="music-disc">
+                                        <img src="images/user (3).png" alt="Disc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mes" onclick="forkeyboard()" >
-                <div class="yup">
-                    <div class="line">
-                        <div class="one">
-                            <img src="images/left-arrow (1).png" alt="">
+            <div class="mes" onclick="forkeyboard()">
+                <div class="yup" id="chatYupBox" style="position: relative;">
+                    <!-- Floating Particle Container for Gravity Emojis -->
+                    <div class="emoji-particles-container" id="emojiParticlesContainer"></div>
+
+                    <!-- Media Attachments Popover panel -->
+                    <div class="media-attachment-panel" id="mediaAttachmentPanel">
+                        <div class="attachment-option" onclick="sendAttachment('link')">
+                            <span class="attachment-option-icon">🔗</span>
+                            <span>Send Vibe Link</span>
                         </div>
+                        <div class="attachment-option" onclick="sendAttachment('doc')">
+                            <span class="attachment-option-icon">📄</span>
+                            <span>Send Design Doc</span>
+                        </div>
+                        <div class="attachment-option" onclick="sendAttachment('img')">
+                            <span class="attachment-option-icon">🖼️</span>
+                            <span>Send Concept Art</span>
+                        </div>
+                    </div>
+
+                    <div class="line">
                         <div class="three">
                             <div class="cir">
-                                <div class="cdl" id="cdl"></div>
+                                <div class="cdl" id="cdl"
+                                    style="background-image: url('images/user.png'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                                </div>
                             </div>
                             <div class="text">
-                                <div class="cdl1" id="cdl1">Select</div>
+                                <div class="cdl1" id="cdl1">Select Contact</div>
+                                <span class="cdl1-sub" id="cdlSub">Pick someone to start vibing ✦</span>
                             </div>
                         </div>
+
                         <div class="two">
                             <div class="tie">
-                                <div class="box" title="VideoCall" onclick="aa36()"><img src="images/cam-recorder1.png" alt="" class="inactive" id="AAA1"><img src="images/videocam.png" alt="" class="active" id="BBB1"></div>
-                                <div class="box" title="Phone" onclick="aa37()"><img src="images/telephone.png" alt="" class="inactive" id="AAA2"><img src="images/phone-call.png" alt="" class="active" id="BBB2"></div>
-                                <div class="box" title="Search" onclick="aa38()"><img src="images/search (2).png" alt="" class="inactive" id="AAA3"><img src="images/search1.png" alt="" class="active" id="BBB3"></div>
-                                <div class="box" title="Link" onclick="aa39()"><img src="images/link1.png" alt="" class="inactive" id="AAA4"><img src="images/link (1).png" alt="" class="active" id="BBB4"></div>
-                                <div class="box" title="Media" onclick="aa40()"><img src="images/document.png" alt="" class="inactive" id="AAA5"><img src="images/document (1).png" alt="" class="active" id="BBB5"></div>
-                                <div class="box" title="Info" onclick="aa41()"><img src="images/info.png" alt="" class="inactive" id="AAA6"><img src="images/info (1).png" alt="" class="active" id="BBB6"></div>
-                    </div>
+                                <div class="box" id="btnVideoCall" title="Video Call" onclick="startMockCall('video')">
+                                    <img src="images/cam-recorder1.png" alt="" class="inactive" id="AAA1"><img
+                                        src="images/videocam.png" alt="" class="active" id="BBB1"></div>
+                                <div class="box" id="btnVoiceCall" title="Voice Call" onclick="startMockCall('voice')">
+                                    <img src="images/telephone.png" alt="" class="inactive" id="AAA2"><img
+                                        src="images/phone-call.png" alt="" class="active" id="BBB2"></div>
+                                <div class="box" id="btnSearchChat" title="Search Chat" onclick="focusChatSearch()"><img
+                                        src="images/search (2).png" alt="" class="inactive" id="AAA3"><img
+                                        src="images/search1.png" alt="" class="active" id="BBB3"></div>
+                                <div class="box" id="btnAttachments" title="Attachments"
+                                    onclick="toggleMediaAttachmentPanel(event)"><img src="images/link1.png" alt=""
+                                        class="inactive" id="AAA4"><img src="images/link (1).png" alt="" class="active"
+                                        id="BBB4"></div>
+                                <div class="box" id="btnMediaPanel" title="Send Document"
+                                    onclick="sendAttachment('doc')"><img src="images/document.png" alt=""
+                                        class="inactive" id="AAA5"><img src="images/document (1).png" alt=""
+                                        class="active" id="BBB5"></div>
+                                <div class="box" id="btnChatInfo" title="Chat Info" onclick="showChatInfo()"><img
+                                        src="images/info.png" alt="" class="inactive" id="AAA6"><img
+                                        src="images/info (1).png" alt="" class="active" id="BBB6"></div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Conversation Message Viewport -->
+                    <div class="chat-conversation-area" id="chatConversationArea">
+                        <div class="chat-empty-state" id="chatEmptyState">
+                            <div class="empty-orb-wrap">
+                                <div class="empty-orb"></div>
+                                <div class="empty-orb-ring"></div>
+                                <div class="empty-orb-ring r2"></div>
+                            </div>
+                            <div class="empty-state-icon">💬</div>
+                            <h3 class="empty-state-title">No Conversation Yet</h3>
+                            <p class="empty-state-desc">
+                                Pick a creator from your<br>
+                                <strong>Chats list</strong> to start vibing ✦
+                            </p>
+                            <div class="empty-state-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Quick Replies Tag Panel -->
+                    <div class="quick-replies-panel" id="quickRepliesPanel" style="display: none;">
+                        <!-- Rendered dynamically -->
+                    </div>
+
+                    <!-- Input Bar -->
                     <div class="inpo" onclick="forkeyboard()">
-                        <form action="">
-                            <input type="text"
-                            id="textArea Timepassboyhood"
-                            class="transition" placeholder="Input" onclick="forkeyboard()">
+                        <form action="" onsubmit="event.preventDefault(); sendUserMessageFromInput();"
+                            style="display: flex; width: 100%; align-items: center; margin: 0; position: relative;">
+                            <!-- Voice Recording Soundwave Overlay -->
+                            <div class="voice-recording-visualizer" id="voiceRecordingVisualizer"
+                                style="display: none;">
+                                <span class="recording-dot"></span>
+                                <span class="recording-text">Recording Audio...</span>
+                                <div class="wave-visualizer">
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                </div>
+                            </div>
+                            <input type="text" id="textArea" class="transition" placeholder="Input message..."
+                                onclick="forkeyboard()" autocomplete="off">
+                            <button type="button" class="chat-mic-btn" id="btnVoiceRecord"
+                                onclick="toggleVoiceRecord(event)" title="Record Voice Message">🎤</button>
+                            <button type="submit" class="chat-send-btn" id="chatSendBtn">⚡</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="fol">
+            <div class="fol" id="chatsFolPanel">
                 <div class="boxModel1">
                     <h1 class="box1h1">Chats</h1>
-                    <input type="text" class="searchenginechat" placeholder="Search">
+                    <input type="text" class="searchenginechat" id="chatSearchInput" placeholder="Search creators..."
+                        oninput="filterChatsContacts()">
                     <div class="gamechanger">
-                        <div class="searchboxingbox">
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
-                            <div class="playbox">ih<br></div>
+                        <div class="searchboxingbox" id="chatsListContainer">
+                            <!-- Populated dynamically -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- Custom Footer on the right side of the bottom bar -->
+            <div class="custom-footer">
+                <p>2027 made with <span class="heart-pulse">❤️</span> by <span class="author-name">Akshith</span></p>
+                <a href="https://github.com/Akshith" target="_blank" class="github-link">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
     </section>
     <div class="guo">
         <div class="circle">
@@ -250,98 +781,264 @@
     <div class="slide">
         MASTER
     </div>
-    
+
     <div class="bgKeyboard transition" id="bgKeyboard1">
         <div class="startMsg transition">Press any key to Continue...</div>
         <div class="keyboard">
-          <div class="row numberLine">
-            <div class="Keyblacktick">`</div>
-            <div class="Keyone">1</div>
-            <div class="Keytwo">2</div>
-            <div class="Keythree">3</div>
-            <div class="Keyfour">4</div>
-            <div class="Keyfive">5</div>
-            <div class="Keysix">6</div>
-            <div class="Keyseven">7</div>
-            <div class="Keyeight">8</div>
-            <div class="Keynine">9</div>
-            <div class="Keyzero">0</div>
-            <div class="Keyminus">-</div>
-            <div class="KeyequalsTo">=</div>
-            <div class="Keybackspace" id="Keybackspace">BACK</div>
-          </div>
+            <div class="row numberLine">
+                <div class="Keyblacktick">`</div>
+                <div class="Keyone">1</div>
+                <div class="Keytwo">2</div>
+                <div class="Keythree">3</div>
+                <div class="Keyfour">4</div>
+                <div class="Keyfive">5</div>
+                <div class="Keysix">6</div>
+                <div class="Keyseven">7</div>
+                <div class="Keyeight">8</div>
+                <div class="Keynine">9</div>
+                <div class="Keyzero">0</div>
+                <div class="Keyminus">-</div>
+                <div class="KeyequalsTo">=</div>
+                <div class="Keybackspace" id="Keybackspace">BACK</div>
+            </div>
 
-          <div class="row alphaUpperLine">
-            <div class="Keytab" style="width:40px;
+            <div class="row alphaUpperLine">
+                <div class="Keytab" style="width:40px;
             border-radius: 10px;">TAB</div>
-            <div class="Keyq">Q</div>
-            <div class="Keyw">W</div>
-            <div class="Keye">E</div>
-            <div class="Keyr">R</div>
-            <div class="Keyt">T</div>
-            <div class="Keyy">Y</div>
-            <div class="Keyu">U</div>
-            <div class="Keyi">I</div>
-            <div class="Keyo">O</div>
-            <div class="Keyp">P</div>
-            <div class="KeyopenedBracket">[</div>
-            <div class="KeyclosedBracket">]</div>
-            <div class="KeybackSlash">\</div>
-          </div>
+                <div class="Keyq">Q</div>
+                <div class="Keyw">W</div>
+                <div class="Keye">E</div>
+                <div class="Keyr">R</div>
+                <div class="Keyt">T</div>
+                <div class="Keyy">Y</div>
+                <div class="Keyu">U</div>
+                <div class="Keyi">I</div>
+                <div class="Keyo">O</div>
+                <div class="Keyp">P</div>
+                <div class="KeyopenedBracket">[</div>
+                <div class="KeyclosedBracket">]</div>
+                <div class="KeybackSlash">\</div>
+            </div>
 
-          <div class="row alphaMiddleLine">
-            <div class="Keycapslock" style="width: 50px;
+            <div class="row alphaMiddleLine">
+                <div class="Keycapslock" style="width: 50px;
             border-radius: 10px;">CAPS</div>
-            <div class="Keya">A</div>
-            <div class="Keys">S</div>
-            <div class="Keyd">D</div>
-            <div class="Keyf">F</div>
-            <div class="Keyg">G</div>
-            <div class="Keyh">H</div>
-            <div class="Keyj">J</div>
-            <div class="Keyk">K</div>
-            <div class="Keyl">L</div>
-            <div class="Keysemicolon">;</div>
-            <div class="Keyquote">'</div>
-            <div class="Keyenter" style="width: 55px;
+                <div class="Keya">A</div>
+                <div class="Keys">S</div>
+                <div class="Keyd">D</div>
+                <div class="Keyf">F</div>
+                <div class="Keyg">G</div>
+                <div class="Keyh">H</div>
+                <div class="Keyj">J</div>
+                <div class="Keyk">K</div>
+                <div class="Keyl">L</div>
+                <div class="Keysemicolon">;</div>
+                <div class="Keyquote">'</div>
+                <div class="Keyenter" style="width: 55px;
             border-radius: 10px;">ENTER</div>
-          </div>
+            </div>
 
-          <div class="row alphaLowerLine">
-            <div class="KeylShift" style="width: 60px;
+            <div class="row alphaLowerLine">
+                <div class="KeylShift" style="width: 60px;
             border-radius: 10px;">SHIFT</div>
-            <div class="Keyz">Z</div>
-            <div class="Keyx">X</div>
-            <div class="Keyc">C</div>
-            <div class="Keyv">V</div>
-            <div class="Keyb">B</div>
-            <div class="Keyn">N</div>
-            <div class="Keym">M</div>
-            <div class="Keycomma">,</div>
-            <div class="Keyfullstop">.</div>
-            <div class="KeyfrontSlash">/</div>
-            <div class="KeyrShift" id="KeyrShift" style="width: 60px;
+                <div class="Keyz">Z</div>
+                <div class="Keyx">X</div>
+                <div class="Keyc">C</div>
+                <div class="Keyv">V</div>
+                <div class="Keyb">B</div>
+                <div class="Keyn">N</div>
+                <div class="Keym">M</div>
+                <div class="Keycomma">,</div>
+                <div class="Keyfullstop">.</div>
+                <div class="KeyfrontSlash">/</div>
+                <div class="KeyrShift" id="KeyrShift" style="width: 60px;
             border-radius: 10px;">SHIFT</div>
-          </div>
+            </div>
 
-          <div class="row BottomLine">
-            <div class="KeylCtrl" id="KeylCtrl">CTRL</div>
-            <div class="KeylFunction" id="KeylFunction" style="width: 40px;
+            <div class="row BottomLine">
+                <div class="KeylCtrl" id="KeylCtrl">CTRL</div>
+                <div class="KeylFunction" id="KeylFunction" style="width: 40px;
             border-radius: 10px;">FN</div>
-            <div class="Keywin" id="Keywin" style="width: 50px;
+                <div class="Keywin" id="Keywin" style="width: 50px;
             border-radius: 10px;">WIN</div>
-            <div class="KeylAlt" id="KeylAlt" style="width: 40px;
+                <div class="KeylAlt" id="KeylAlt" style="width: 40px;
             border-radius: 10px;">ALT</div>
-            <div class="Keyspace" id="Keyspace">SPACE</div>
-            <div class="KeyrAlt" id="KeyrAlt" style="width: 40px;
+                <div class="Keyspace" id="Keyspace">SPACE</div>
+                <div class="KeyrAlt" id="KeyrAlt" style="width: 40px;
             border-radius: 10px;">ALT</div>
-            <div class="KeyrFunction" id="KeyrFunction" style="width: 40px;
+                <div class="KeyrFunction" id="KeyrFunction" style="width: 40px;
             border-radius: 10px;">FN</div>
-            <div class="KeyrCtrl" id="KeyrCtrl">CTRL</div>
-          </div>
+                <div class="KeyrCtrl" id="KeyrCtrl">CTRL</div>
+            </div>
         </div>
-      </div>
-    <script src="javascript.js" type="text/javascript"></script>
-    <script type="text/javascript" src="script.js"></script>
+    </div>
+
+    <!-- Zen Control Panel Sidebar -->
+    <div id="moreSidebar" class="more-sidebar transition">
+        <div class="sidebar-header">
+            <h3>Zen Dashboard</h3>
+            <button class="close-sidebar-btn" onclick="toggleMoreSidebar()">×</button>
+        </div>
+
+        <div class="sidebar-section">
+            <h4 class="section-title">Ambient Theme Engine</h4>
+            <p class="section-desc">Shift the global gravity space of your interface.</p>
+            <div class="vibe-grid">
+                <button class="vibe-btn active" id="btn-vibe-default" onclick="changeVibe('default')">
+                    <span class="vibe-icon">🌀</span> Original
+                </button>
+                <button class="vibe-btn" id="btn-vibe-chill" onclick="changeVibe('chill')">
+                    <span class="vibe-icon">🌿</span> Mint Chill
+                </button>
+                <button class="vibe-btn" id="btn-vibe-sunrise" onclick="changeVibe('sunrise')">
+                    <span class="vibe-icon">🌅</span> Sunset Gold
+                </button>
+                <button class="vibe-btn" id="btn-vibe-twilight" onclick="changeVibe('twilight')">
+                    <span class="vibe-icon"> Rose Twilight</span>
+                </button>
+                <button class="vibe-btn" id="btn-vibe-dark" onclick="changeVibe('dark-space')">
+                    <span class="vibe-icon">🌌</span> Dark Space
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h4 class="section-title">Zen Ambient Player</h4>
+            <p class="section-desc">Tune into background loops to enhance your social space.</p>
+            <div class="player-container">
+                <div class="track-info">
+                    <span class="track-name" id="zenTrackName">Ambient Lofi Chill</span>
+                    <span class="track-status" id="zenTrackStatus">Paused</span>
+                </div>
+
+                <!-- Simple Soundwave Visualizer -->
+                <div class="visualizer" id="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="player-controls">
+                    <button class="play-btn" id="playBtn" onclick="toggleZenPlayback()">Play</button>
+                    <select class="sound-select" id="soundSelect" onchange="changeZenSound()">
+                        <option value="lofi">Lo-Fi Beats</option>
+                        <option value="rain">Soft Rain</option>
+                        <option value="cafe">Vibrant Cafe</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h4 class="section-title">Quick Actions</h4>
+            <div class="shortcut-grid">
+                <button class="action-tile" onclick="forkeyboard(); toggleMoreSidebar()">
+                    <span>⌨️</span> Virtual Keyboard
+                </button>
+                <button class="action-tile" onclick="location.reload()">
+                    <span>🔄</span> Refresh Gravity
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <p>Space Engine • V1.5.0</p>
+        </div>
+    </div>
+
+    <!-- Stories/Status Explorer Window Overlay (Draggable, Resizable, and Pop-out capable) -->
+    <div id="storiesExplorer" class="stories-explorer-window glass-panel vibe-styled-window">
+        <div class="window-header" id="storiesDragHeader">
+            <div class="window-title-area">
+                <span class="window-icon">✨</span>
+                <span class="window-title">Status Hub</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn popout-btn" onclick="popoutStories()" title="Pop out separate window">↗️</button>
+                <button class="win-btn minimize-btn" onclick="minimizeStories()" title="Minimize to tray">➖</button>
+                <button class="win-btn close-btn-win" onclick="closeStories()" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="explorer-toolbar">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Search creators or statuses..." class="explorer-search"
+                        id="storiesSearchInput" oninput="filterStoriesGrid()">
+                </div>
+                <div class="customizer-btns">
+                    <button id="btn-cols-2" onclick="toggleGridColumns(2)" class="grid-layout-btn"
+                        title="2 Columns">📁</button>
+                    <button id="btn-cols-3" onclick="toggleGridColumns(3)" class="grid-layout-btn active"
+                        title="3 Columns">📊</button>
+                    <button onclick="toggleWindowTheme()" class="grid-layout-btn theme-toggle"
+                        title="Shift Glass Shade">🎨</button>
+                </div>
+            </div>
+            <div class="stories-grid-container grid-3-cols" id="storiesGridContainer">
+                <!-- Dynamic cards populated in javascript.js -->
+            </div>
+        </div>
+        <!-- Window Resize Handle -->
+        <div class="window-resize-handle" id="storiesResizeHandle"></div>
+    </div>
+
+    <!-- Minimized Stories Hub Bar -->
+    <div id="storiesMinimizedBar" class="stories-minimized-bar glass-panel" onclick="restoreStories()">
+        <span class="min-icon">✨</span>
+        <span class="min-text">Status Hub (Minimized) • Click to Restore</span>
+    </div>
+
+    <!-- Story Lightbox Overlay (FullScreen WhatsApp/Instagram-style Status Viewer) -->
+    <div id="storyLightbox" class="story-lightbox transition">
+        <div class="lightbox-backdrop" onclick="closeStoryLightbox()"></div>
+        <div class="lightbox-container glass-panel">
+            <div class="lightbox-progress-bar" id="lightboxProgressBar">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="lightbox-header">
+                <div class="lightbox-user-info">
+                    <img src="images/user.png" alt="Avatar" class="lightbox-avatar" id="lightboxAvatar">
+                    <span class="lightbox-username" id="lightboxUsername">@alex_creative</span>
+                    <span class="lightbox-time" id="lightboxTime">2h ago</span>
+                </div>
+                <button class="lightbox-close-btn" onclick="closeStoryLightbox()">×</button>
+            </div>
+            <div class="lightbox-body" id="lightboxBody" onmousedown="pauseStoryTimer()" onmouseup="resumeStoryTimer()"
+                ontouchstart="pauseStoryTimer()" ontouchend="resumeStoryTimer()">
+                <!-- Status content rendered dynamically -->
+            </div>
+            <button class="lightbox-nav-btn prev" onclick="prevStory()">‹</button>
+            <button class="lightbox-nav-btn next" onclick="nextStory()">›</button>
+        </div>
+    </div>
+
+    <!-- Mock Calling Overlay Modal -->
+    <div id="chatCallModal" class="chat-call-modal">
+        <div class="call-backdrop" onclick="endMockCall()"></div>
+        <div class="call-container">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+                <img src="images/user.png" alt="Avatar" class="call-user-avatar calling-pulse" id="callAvatar">
+                <h2 class="call-title" id="callTitle">@creator</h2>
+                <span class="call-status" id="callStatus">Ringing...</span>
+                <span class="call-timer" id="callTimer" style="display: none;">00:00</span>
+            </div>
+
+            <div class="call-controls">
+                <button class="call-control-btn" onclick="toggleCallMute(this)" title="Mute Microphone">🎤</button>
+                <button class="call-control-btn" id="callVideoToggle" onclick="toggleCallVideo(this)"
+                    title="Turn Off Camera">📹</button>
+                <button class="call-control-btn end-call" onclick="endMockCall()" title="End Call">📞</button>
+            </div>
+        </div>
+
+
+
+        <script src="javascript.js" type="text/javascript"></script>
+        <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

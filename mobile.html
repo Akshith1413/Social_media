@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Social - Download App</title>
+    <!-- Bidirectional Redirect: Redirect PC/Laptops back to desktop index.html -->
+    <script>
+        (function() {
+            var redirecting = false;
+            function checkDevice() {
+                if (redirecting) return;
+                var width = document.documentElement.clientWidth || window.innerWidth;
+                var isMobile = width <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (!isMobile && window.location.pathname.indexOf("index.html") === -1) {
+                    redirecting = true;
+                    window.location.href = "index.html";
+                }
+            }
+            checkDevice();
+            window.addEventListener('resize', checkDevice);
+        })();
+    </script>
+    <!-- Google Fonts for premium appearance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <!-- Decorative Glowing Mesh Background Orbs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="page-container">
+        <!-- Brand Header -->
+        <header class="logo-header">
+            <div class="logo-icon">▲</div>
+            <h1 class="logo-title">Antigravity</h1>
+        </header>
+
+        <!-- Main Dynamic Content -->
+        <main class="main-content">
+            <!-- Simulated Smartphone Mockup with Interactive Animations -->
+            <div class="device-mockup">
+                <div class="phone-shell">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <!-- Simulated App Status Bar -->
+                        <div class="status-bar">
+                            <span class="time">9:41</span>
+                            <div class="status-icons">
+                                <svg class="icon-battery" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m2 4h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2z"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Stories Row -->
+                        <div class="mock-stories">
+                            <div class="story-circle ring-active"></div>
+                            <div class="story-circle ring-active"></div>
+                            <div class="story-circle ring-active"></div>
+                            <div class="story-circle"></div>
+                            <div class="story-circle"></div>
+                        </div>
+
+                        <!-- Simulated Reels Video Post Card -->
+                        <div class="mock-reels-card">
+                            <div class="video-overlay">
+                                <div class="pulse-heart-container">
+                                    <svg class="heart-pulse" viewBox="0 0 24 24" width="60" height="60" fill="#ff4d4d"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/></svg>
+                                </div>
+                                <div class="reels-info">
+                                    <span class="user-handle">@antigravity</span>
+                                    <span class="user-caption">Pulsing with smooth CSS animations... ✨</span>
+                                </div>
+                                <div class="reels-actions">
+                                    <div class="action-btn active-heart">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/></svg>
+                                    </div>
+                                    <div class="action-btn">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4z"/></svg>
+                                    </div>
+                                    <div class="action-btn">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Messaging Thread -->
+                        <div class="mock-chat-thread">
+                            <div class="chat-bubble received">Hey! Have you seen the new update? 😮</div>
+                            <div class="chat-bubble sent">Yeah! The animations are insanely smooth. 🚀</div>
+                            <div class="chat-bubble received">Downloading the mobile app now!</div>
+                        </div>
+
+                        <div class="home-indicator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Copy & Custom SVG Store Badges -->
+            <div class="download-section">
+                <h2>Optimized for Desktop</h2>
+                <p class="description">
+                    The full desktop web experience is exclusively available on **PC & Laptop displays**. 
+                    For smaller screens, please download our native app!
+                </p>
+
+                <div class="store-badge-container">
+                    <!-- Apple App Store Badge -->
+                    <a href="#" class="store-badge">
+                        <svg viewBox="0 0 384 512" width="24" height="24" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 51 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 47.5-24.4 76.5 26.9 2.4 51.2-16 68.3-38.9z"/></svg>
+                        <div class="badge-text">
+                            <span class="badge-sub">Download on the</span>
+                            <span class="badge-main">App Store</span>
+                        </div>
+                    </a>
+
+                    <!-- Google Play Store Badge -->
+                    <a href="#" class="store-badge">
+                        <svg viewBox="0 0 512 512" width="24" height="24" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58 33.3-60.1-60.1L435 181c16.1 9.2 27.2 25.8 27.2 44.6 0 18.8-11 35.4-27 44.6zm-147 68.7L104.6 499l220.7-126.7-60.1-60.1z"/></svg>
+                        <div class="badge-text">
+                            <span class="badge-sub">GET IT ON</span>
+                            <span class="badge-main">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+
+                <footer class="download-footer">
+                    <p>Antigravity App • V1.4.0</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+</html>

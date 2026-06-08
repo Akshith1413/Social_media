@@ -1,33 +1,34 @@
 // variables to store both, before-click and on-click background colors of buttons
-const normLPinky = 'rgb(255, 160, 122)';
-const lPinky = 'rgb(184, 83, 44)';
+const normLPinky = '#ffffff';
+const lPinky = '#ff4d6d';
 
-const normLRing = 'rgb(240, 128, 128)';
-const lRing = 'rgb(180, 81, 81)';
+const normLRing = '#ffffff';
+const lRing = '#ff4d6d';
 
-const normLMiddle = 'rgb(119, 136, 153)';
-const lMiddle = 'rgb(44, 88, 133)';
+const normLMiddle = '#ffffff';
+const lMiddle = '#ff4d6d';
 
-const normLIndex = 'rgb(135, 206, 250)';
-const lIndex = 'rgb(49, 144, 204)';
+const normLIndex = '#ffffff';
+const lIndex = '#ff4d6d';
 
-const normRIndex = 'rgb(173, 216, 230)';
-const rIndex = 'rgb(44, 119, 145)';
+const normRIndex = '#ffffff';
+const rIndex = '#ff4d6d';
 
-const normRMiddle = 'rgb(144, 238, 144)';
-const rMiddle = 'rgb(60, 187, 60)';
+const normRMiddle = '#ffffff';
+const rMiddle = '#ff4d6d';
 
-const normRRing = 'rgb(255, 184, 194)';
-const rRing = 'rgb(180, 70, 84)';
+const normRRing = '#ffffff';
+const rRing = '#ff4d6d';
 
-const normRPinky = 'rgb(255, 255, 155)';
-const rPinky = 'rgb(192, 192, 52)';
+const normRPinky = '#ffffff';
+const rPinky = '#ff4d6d';
 
-const normCapslock = 'rgb(255, 222, 173)';
-const capslock = 'rgb(194, 138, 54)';
+const normCapslock = '#ffffff';
+const capslock = '#ff4d6d';
 
-const normSpaceAlt = 'rgb(32, 178, 170)';
-const spaceAlt = 'rgb(9, 109, 104)';
+const normSpaceAlt = '#ffffff';
+const spaceAlt = '#ff4d6d';
+
 
 const allAlphaUpper = () => {
     // function to convert all alphabets into uppercase
@@ -217,11 +218,13 @@ document.addEventListener('keydown', (event) => {
         case 48:
             document.querySelector('div.Keyzero').style.backgroundColor = rPinky;
             break;
-        case 189 || 173:
-            document.querySelector('div.Keyminus').style.backgroundColor = rPinky;
+        case 189:
+        case 173:
+            document.querySelector('div.Keyminus').style.backgroundColor = lPinky;
             break;
-        case 187 || 61:
-            document.querySelector('div.KeyequalsTo').style.backgroundColor = rPinky;
+        case 187:
+        case 61:
+            document.querySelector('div.KeyequalsTo').style.backgroundColor = lPinky;
             break;
         case 8:
             document.querySelector('div.Keybackspace').style.backgroundColor = rPinky;
@@ -403,10 +406,12 @@ document.addEventListener('keyup', (event) => {
         case 48:
             document.querySelector('div.Keyzero').style.backgroundColor = normRPinky;
             break;
-        case 189 || 173:
+        case 189:
+        case 173:
             document.querySelector('div.Keyminus').style.backgroundColor = normRPinky;
             break;
-        case 187 || 61:
+        case 187:
+        case 61:
             document.querySelector('div.KeyequalsTo').style.backgroundColor = normRPinky;
             break;
         case 8:
